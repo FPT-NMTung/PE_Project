@@ -7,4 +7,4 @@ const siteController = require('../controller/site.controller')
 router.get('/me', checkAuthenticated, siteController.me)
 router.get('/', siteController.index)
 
-module.exports = router
+module.exports = router;
