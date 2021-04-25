@@ -1,0 +1,17 @@
+{
+  "fullname": "",
+  "email": "",
+  "password": "",
+  "coursesId": [
+    {
+      "id": "123",
+      "status": "done",
+      "score": 60
+    },
+    {
+      "id": "234",
+      "status": "coding",
+      "score": 0
+    }
+  ]
+}

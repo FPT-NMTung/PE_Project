@@ -1,14 +1,80 @@
-<p>Login Page</p>
+<!doctype html>
+<html lang="en">
 
-<form action="/login" method="POST">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="https://kit.fontawesome.com/e39613c045.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container {{#if isRegisterPage}}right-panel-active{{/if}}" id="container">
+        <div class="form-container sign-up-container">
+            <form action="/register" method="POST">
+                <h1>Tạo tài khoản</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc đăng kí bằng mẫu bên dưới</span>
+                <input id="fullname" name="fullname" type="text" placeholder="Tên của bạn" required />
+                <input id="email" name="email" type="email" placeholder="Địa chỉ email" required />
+                <input id="password" name="password" type="password" placeholder="Mật khẩu" required />
+                <input id="rePassword" name="rePassword" type="password" placeholder="Nhập lại mật khẩu" required />
+                <div>
+                    <span style="color: rgb(255, 67, 67);" id="validationMessage"></span>
+                    <span style="color: rgb(34, 189, 42);" id="successMessage"></span>
+                </div>
+                <br>
+            </form>
+            <button id="register">Đăng ký</button>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/login" method="POST">
+                <h1>Đăng nhập</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc đăng nhập bằng email</span>
+                <input id="loginEmail" name="email" type="email" placeholder="Địa chie email" />
+                <input id="loginPassword" name="password" type="password" placeholder="Mật khẩu" />
+                <a href="/forgot-password">Quên mật khẩu?</a>
+                <button id="login">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Để có thể tiếp tục học tập hãy đăng nhập sử dụng tài khoản của bạn</p>
+                    <button class="ghost" id="signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Xin chào, Người lạ!</h1>
+                    <p>Hãy đăng ký bằng thông tin của bạn để có thể học tập với chúng tôi</p>
+                    <button class="ghost" id="signUp">Đăng ký</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
-<a href="/register">Register</a>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main 2.js"></script>
+</body>
+
+</html>

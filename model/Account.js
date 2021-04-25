@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 
 const Account = new Schema(
     {
-        password: String,
+        fullname: String,
         email: String,
+        password: String,
+        coursesId: Array,
     }, 
     {
         timestamps: true,

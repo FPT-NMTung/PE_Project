@@ -1,6 +1,9 @@
 class Login {
     index(req, res, next) {
-        res.render('login')
+        res.render('login', {
+            title: 'Login Page',
+            isRegisterPage: false
+        })
     }
 }
 
