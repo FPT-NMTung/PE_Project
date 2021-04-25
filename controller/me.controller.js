@@ -1,6 +1,8 @@
+const Account = require('../model/Account')
+
 class MeController {
     index(req, res, next) {
-        res.render('me')
+        res.render('home')
     }
 }
 

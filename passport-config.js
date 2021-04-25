@@ -30,7 +30,9 @@ function initialize(passport) {
 	passport.deserializeUser((id, done) => {
 		Account.findOne({ _id: id })
 			.then((account) => {
-				return done(null, account)
+				return done(null, {
+					id: account._id,
+				})
 			})
 			.catch()
 	})

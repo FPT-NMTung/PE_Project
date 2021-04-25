@@ -4,7 +4,9 @@ class SiteController {
     }
 
     me(req, res, next) {
-        res.render('me')
+        res.render('me', {
+            userId: req.user.id,
+        })
     }
 }
 
