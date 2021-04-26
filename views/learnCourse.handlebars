@@ -12,8 +12,8 @@
     <div style="height: 90vh;">
         <div style="height: 100%">
             <p>Hello {{fullname}}</p>
-            <a href="/course/{{course.idProblem}}">back</a>
-            <div class="se-widget" data-widget="{{course.idProblem}}"></div>
+            <p><a href="/course/{{course.idProblem}}">back</a></p>
+            <div class="se-widget" data-widget="{{course.idProblem}}" data-id="example-widget"></div>
         </div>
     </div>
 </body>
@@ -28,6 +28,18 @@
         js.src = (SE_HTTPS ? "https" : "http") + "://" + SE_BASE + "/static/sdk/sdk.min.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, "script", "sphere-engine-jssdk"));
+    SE.ready = function (f) { if (document.readyState != "loading" && document.readyState != "interactive") f(); else window.addEventListener("load", f); };
+    SE.ready(function () {
+        var checkStatus = function (data) {
+            if (data.status.description == 'accepted') {
+                alert('accepted 100% test case')
+            } else if (data.status.description == 'wrong answer') {
+                alert('wrong test case')
+            }
+        };
+        var SEWidget = SE.widget("example-widget");
+        SEWidget.events.subscribe('checkStatus', checkStatus);
+    });
 </script>
 
 </html>
