@@ -32,6 +32,7 @@ function initialize(passport) {
 			.then((account) => {
 				return done(null, {
 					id: account._id,
+					fullname: account.fullname,
 				})
 			})
 			.catch()

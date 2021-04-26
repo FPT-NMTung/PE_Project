@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Hello {{fullname}}</h2>
+    <p>link quay trở về trang cá nhân: <a href="/me">click hear</a></p>
+    <p>Course Page</p>
+    <ul>
+        {{#each courses}}
+        <li><a href="/course/{{this.idProblem}}">{{this.idProblem}}</a></li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>
