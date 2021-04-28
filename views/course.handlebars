@@ -10,12 +10,21 @@
 
 <body>
     <h2>Hello {{fullname}}</h2>
-    <p>link quay trở về trang cá nhân: <a href="/me">click hear</a></p>
+    <p>link quay trở về trang cá nhân: <a href="/me">click here</a></p>
     <p>Course Page</p>
     <ul>
         {{#each courses}}
-        <li><a href="/course/{{this.idProblem}}">{{this.idProblem}}</a></li>
+        <li>
+            <p>đây là bài:
+                {{#if this.isSubscribe}}
+                {{this.name}} (đã đăng ký)
+                {{else}}
+                <a href="/course/{{this.idCourse}}">{{this.name}}</a>
+                {{/if}}
+            </p>
+        </li>
         {{/each}}
     </ul>
 </body>
+
 </html>

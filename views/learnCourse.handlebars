@@ -12,8 +12,8 @@
     <div style="height: 90vh;">
         <div style="height: 100%">
             <p>Hello {{fullname}}</p>
-            <p><a href="/course/{{course.idProblem}}">back</a></p>
-            <div class="se-widget" data-widget="{{course.idProblem}}" data-id="example-widget"></div>
+            <p><a href="/course/{{course.idCourse}}">back</a></p>
+            <div class="se-widget" data-widget="{{course.idCourse}}" data-id="example-widget"></div>
         </div>
     </div>
 </body>
@@ -41,5 +41,4 @@
         SEWidget.events.subscribe('checkStatus', checkStatus);
     });
 </script>
-
 </html>

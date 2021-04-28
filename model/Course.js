@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const Course = new Schema(
     {
-        idProblem: String,
+        name: String,
+        idCourse: String,
     }, 
     {
         timestamps: true,

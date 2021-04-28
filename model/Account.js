@@ -7,7 +7,7 @@ const Account = new Schema(
         fullname: String,
         email: String,
         password: String,
-        coursesId: Array,
+        idCourse: Array,
     }, 
     {
         timestamps: true,

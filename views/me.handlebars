@@ -10,6 +10,13 @@
 
 <body>
     <h2>Hello {{fullname}}</h2>
+    <h3>Các bài tập đã đăng ký:</h3>
+    <ul>
+        {{#each courses}}
+        <li><a href="/course/{{this.idCourse}}">{{this.name}}</a></li>
+        {{/each}}
+    </ul>
+
     <a href="/course">Courses</a>
     <br>
     <a href="/logout">Log Out</a>
