@@ -11,11 +11,16 @@
 <body>
     <h2>Hello {{fullname}}</h2>
     <p>Trang này chứa thông tin của bài có ID là <i style="color: red;">{{course.idCourse}}</i></p>
+
+    {{#if course.isSubscribe}}
+    <p>link dẫn đến bài: <a href="/course/{{course.idCourse}}/learn">click here</a></p>
+    {{else}}
     <form action="/course/subscribe" method="POST">
         <input type="hidden" name="id" value="{{course.idCourse}}">
         <button type="submit">Đăng Ký</button>
     </form>
-    <p>link dẫn đến bài: <a href="/course/{{course.idCourse}}/learn">click here</a></p>
+    {{/if}}
+
     <p>quay trở về danh sách bài: <a href="/course">click here</a></p>
 </body>
 

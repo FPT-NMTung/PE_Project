@@ -28,17 +28,27 @@ class CoursesController {
             .catch()
     }
     detail(req, res, next) {
-        Course.findOne({ idCourse: req.params.slug })
-            .then((course) => {
-                if (course == null) {
-                    res.render('404')
-                } else {
-                    res.render('detailCourse', {
-                        userId: req.user.id,
-                        fullname: req.user.fullname,
-                        course: mongooseToObject(course)
+        Account.findById(req.user.id)
+            .then((account) => {
+                Course.findOne({ idCourse: req.params.slug })
+                    .then((course) => {
+                        let convert = mongooseToObject(course)
+                        if (account.idCourse.includes(convert.idCourse)) {
+                            convert['isSubscribe'] = true;
+                        } else {
+                            convert['isSubscribe'] = false;
+                        }
+                        if (course == null) {
+                            res.render('404')
+                        } else {
+                            res.render('detailCourse', {
+                                userId: req.user.id,
+                                fullname: req.user.fullname,
+                                course: convert,
+                            })
+                        }
                     })
-                }
+                    .catch()
             })
             .catch()
     }
@@ -59,9 +69,9 @@ class CoursesController {
     }
     subscribe(req, res, next) {
         Account.findByIdAndUpdate(req.user.id, {
-            $push: {'idCourse': req.body.id}
+            $push: { 'idCourse': req.body.id }
         }, (err, raw) => {
-            res.redirect('/me')
+            res.redirect('/course/' + req.body.id)
         })
     }
 }
