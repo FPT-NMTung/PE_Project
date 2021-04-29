@@ -28,13 +28,14 @@ function initialize(passport) {
 
 	passport.serializeUser((account, done) => done(null, account.id))
 	passport.deserializeUser((id, done) => {
-		console.log('id in session: ' + id);
 		Account.findOne({ _id: id })
 			.then((account) => {
-				return done(null, {
-					id: account._id,
-					fullname: account.fullname,
-				})
+				if (account) {
+					return done(null, account)
+				} else {
+					return done(null, false)
+				}
+
 			})
 			.catch()
 	})
