@@ -4,8 +4,10 @@ const site = require('./site.route')
 const logout = require('./logout.route')
 const error = require('./error.route')
 const course = require('./course.route')
+const authLogin = require('./auth.google.route')
 
 function routes(app) {
+    app.use('/auth', authLogin);
     app.use('/logout', logout)
     app.use('/login', login)
     app.use('/register', register)
