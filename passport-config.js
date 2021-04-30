@@ -35,7 +35,6 @@ function initialize(passport) {
 				} else {
 					return done(null, false)
 				}
-
 			})
 			.catch()
 	})
