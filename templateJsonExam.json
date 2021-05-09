@@ -1,0 +1,97 @@
+{
+    "id": "NWC203c_Spring2021_ME_2_751892",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What are possible metrics for routing?",
+            "answers": [
+                {
+                    "id": 1,
+                    "value": "Hop count"
+                },
+                {
+                    "id": 2,
+                    "value": "Delay"
+                },
+                {
+                    "id": 3,
+                    "value": "Bandwidth"
+                },
+                {
+                    "id": 4,
+                    "value": "All of the above"
+                }
+            ],
+            "correct": [4]
+        },
+        {
+            "id": 2,
+            "question": "Following the above question, in the third algorithm iteration, which nodes will update their entries and inform their neighbors?",
+            "answers": [
+                {
+                    "id": 1,
+                    "value": "3"
+                },
+                {
+                    "id": 2,
+                    "value": "4"
+                },
+                {
+                    "id": 3,
+                    "value": "6"
+                },
+                {
+                    "id": 4,
+                    "value": "All of the above"
+                }
+            ],
+            "correct": [3]
+        },
+        {
+            "id": 3,
+            "question": "In a router, which of the following statement is true for creating routing tables",
+            "answers": [
+                {
+                    "id": 1,
+                    "value": "Need information on state of links"
+                },
+                {
+                    "id": 2,
+                    "value": "Need to distribute link state information using a routing protocol"
+                },
+                {
+                    "id": 3,
+                    "value": "Need to compute routes based on information"
+                },
+                {
+                    "id": 4,
+                    "value": "All of the above"
+                }
+            ],
+            "correct": [4]
+        },
+        {
+            "id": 4,
+            "question": "In link state routing, which of the following are possible steps taken to resolve the problem of old update messages (Choose 2)",
+            "answers": [
+                {
+                    "id": 1,
+                    "value": "Add time stamp to each update message"
+                },
+                {
+                    "id": 2,
+                    "value": "Add sequence number to each update message"
+                },
+                {
+                    "id": 3,
+                    "value": "Add a null number to each update message"
+                },
+                {
+                    "id": 4,
+                    "value": "None of the above"
+                }
+            ],
+            "correct": [1, 2]
+        }
+    ]
+}
